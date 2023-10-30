@@ -1,0 +1,13 @@
+@mixin decorNumber {
+	position: absolute;
+	top: 50%;
+	
+	color: var(--white);
+	text-align: center;
+	font-family: Playfair Display;
+	font-size: 400px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	opacity: 0.02;
+}

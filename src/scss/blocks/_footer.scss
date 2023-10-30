@@ -1,0 +1,32 @@
+.footer {
+  background-color: var(--footer-bg);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.7px;
+}
+
+.footer__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 72px 0 51px;
+}
+
+.footer__logo {
+  margin-top: -12px;
+}
+
+.footer__contacts i {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.contact__socials {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 22.12px;
+}

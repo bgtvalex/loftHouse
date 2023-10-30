@@ -1,0 +1,20 @@
+.header .nav {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.7px;
+}
+
+.header .nav__list {
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer .nav__item,
+.footer .contact__item {
+  margin-bottom: 15px;
+}

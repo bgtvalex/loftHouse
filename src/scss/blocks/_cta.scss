@@ -1,0 +1,37 @@
+.cta {
+  padding: 180px 180px;
+  background: linear-gradient(
+      180deg,
+      #242b33 10.42%,
+      rgba(36, 43, 51, 0) 50.52%,
+      #242b33 90.1%
+    ),
+    linear-gradient(0deg, rgba(36, 43, 51, 0.9) 0%, rgba(36, 43, 51, 0.9) 100%), 
+		url(./../../img/cta/bg.jpg);
+		background-position:  50%, 50%;
+		background-size: cover;
+		background-repeat:  no-repeat;
+}
+
+.cta__title {
+  margin-bottom: 17px;
+}
+
+.cta__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.cta__text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 35px;
+}

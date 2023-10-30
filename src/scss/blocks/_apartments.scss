@@ -1,0 +1,124 @@
+.apartments {
+  margin-bottom: 88px;
+
+	a {
+		color: var(--white);
+		&:hover {
+			color: var(--white);
+		}
+	}
+}
+
+.apartments__row {
+	position: relative;
+
+  &:before {
+    content: 'III';
+    left: 0;
+    transform: translate(-50%, -90%);
+		@include decorNumber;
+  }
+}
+
+.apartments__title {
+	margin-bottom: 88px;
+}
+
+.apartments__cards {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px;
+}
+
+.apartments__card {
+	position: relative;
+  display: block;
+  width: 540px;
+  height: 320px;
+	color: var(--white);
+
+	&::after {
+		opacity: 0;
+		content: '';
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		bottom: 10px;
+		left: 10px;
+		border: 3px double rgba(255,255,255, .4);
+		transition: opacity .2s ease-in;
+	}	
+
+	&:hover::after {
+		opacity: 1;
+	}
+}
+
+.card-1 {
+  background: linear-gradient(180deg, rgba(36, 43, 51, 0) 0%, var(--dark) 100%),
+    url(./../../img/02_apartments/01.png);
+  background-position: 50%;
+  background-size: cover;
+	transition: all .2s ease-in;
+
+	&:hover {
+		background-image: url(./../../img/02_apartments/01.png);
+		background-size: 110%;
+	}
+}
+
+.card-2 {
+  background: linear-gradient(180deg, rgba(36, 43, 51, 0) 0%, var(--dark) 100%),
+    url(./../../img/02_apartments/02.png);
+  background-position: 50%, 60%;
+  background-size: cover;
+	transition: all .2s ease-in;
+
+	&:hover {
+		background-image: url(./../../img/02_apartments/02.png);
+		background-size: 110%;
+	}
+}
+
+.card-3 {
+  background: linear-gradient(180deg, rgba(36, 43, 51, 0) 0%, var(--dark) 100%),
+    url(./../../img/02_apartments/03.png);
+  background-position: 50%;
+  background-size: cover;
+	transition: all .2s ease-in;
+
+	&:hover {
+		background-image: url(./../../img/02_apartments/03.png);
+		background-size: 110%;
+	}
+}
+
+.card-4 {
+  background: linear-gradient(180deg, rgba(36, 43, 51, 0) 0%, var(--dark) 100%),
+    url(./../../img/02_apartments/04.png);
+  background-position: 50%;
+  background-size: cover;
+	transition: all .2s ease-in;
+
+	&:hover {
+		background-image: url(./../../img/02_apartments/04.png);
+		background-size: 110%;
+	}
+}
+
+.card__title {
+	position: absolute;
+	left: 50px;
+	bottom: 44px;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+	
+
+	a:hover {
+		background: rgba(36, 43, 51, .8);
+		padding:5px 10px;
+	}
+}
