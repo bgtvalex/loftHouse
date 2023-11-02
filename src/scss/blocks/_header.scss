@@ -7,7 +7,7 @@
       rgba(45, 52, 60, 0.38) 51.04%,
       #242b33 92.19%
     ),
-    url(./../img/01_header/header-bg.jpg);
+    url(./../img/header/header-bg.jpg);
   background-position: 50%, 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -27,6 +27,24 @@
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+}
+
+#logo path:nth-child(1),
+#logo path:nth-child(2) {
+  stroke-dasharray: 100%;
+  animation: anim-line 3s ease forwards;
+}
+
+@keyframes anim-line {
+  0% {
+    stroke-dashoffset: 100%;
+  }
+  25% {
+    stroke-dashoffset: 0%;
+  }
+  100% {
+    stroke-dashoffset: 100%;
+  }
 }
 
 .header__title {

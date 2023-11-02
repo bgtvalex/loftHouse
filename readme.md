@@ -20,4 +20,5 @@
 * [coords] (https://snipp.ru/tools/address-coord) - Get coordinates at the address.
 * [yandex developer](https://developer.tech.yandex.ru/) - Yandex Developer Account.
 * [API yandex Maps](https://yandex.ru/maps-api/products/js-api) - An interactive map for your website or application.
-[placemark](https://yandex.ru/dev/jsapi30/doc/ru/examples/cases/placemark) - Adding a placemark to the map.
+* [placemark](https://yandex.ru/dev/jsapi30/doc/ru/examples/cases/placemark) - Adding a placemark to the map.
+* [svg-animation] (https://www.youtube.com/watch?v=_PC4kpOHDBs)

@@ -111,7 +111,7 @@ gulp.task('files:docs', function () {
 gulp.task('libs:docs', function () {
   return gulp
     .src('./src/libs/**/*')
-    .pipe(gulp.dest('./build/libs'))
+    .pipe(gulp.dest('./docs/libs'))
 })
 
 const serverOptions = {

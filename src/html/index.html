@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon"  href="./img/favicon.png">
     <link rel="stylesheet" href="./fonts/PlayfairDisplay/stylesheet.css">
     <link rel="stylesheet" href="./fonts/Raleway/stylesheet.css">
     <link rel="stylesheet" href="./fonts/Roboto/stylesheet.css">
@@ -27,33 +28,10 @@
     @@include('blocks/youtube.html')
 
     <script>
-      window.map = null;
-
-      main();
-      async function main() {
-        await ymaps3.ready;
-        const {YMap, YMapDefaultSchemeLayer, YMapMarker, YMapControls, YMapDefaultFeaturesLayer} = ymaps3;
-
-        const {YMapZoomControl} = await ymaps3.import('@yandex/ymaps3-controls@0.0.1');
-        const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
-
-        map = new YMap(document.getElementById('map'), {location: LOCATION});
-
-        map.addChild((scheme = new YMapDefaultSchemeLayer()));
-        map.addChild(new YMapControls({position: 'right'}).addChild(new YMapZoomControl({})));
-        map.addChild(new YMapDefaultFeaturesLayer({id: 'features'}));
-
-        POINTS.forEach((point) => {
-          if (point.element) {
-            map.addChild(new YMapMarker(point, point.element(point)));
-          } else {
-            map.addChild(new YMapDefaultMarker(point));
-          }
-        });
-      }
+      
     </script>
    
-
+   
 
     
     <script src="./libs/phoneMask/mask.js"></script>
