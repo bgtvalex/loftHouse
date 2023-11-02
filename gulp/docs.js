@@ -108,6 +108,12 @@ gulp.task('files:docs', function () {
     .pipe(gulp.dest('./docs/files'))
 })
 
+gulp.task('libs:docs', function () {
+  return gulp
+    .src('./src/libs/**/*')
+    .pipe(gulp.dest('./build/libs'))
+})
+
 const serverOptions = {
   livereload: true,
   open: true,

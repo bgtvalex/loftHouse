@@ -1,18 +1,17 @@
 .mobile-nav {
   position: fixed;
-  top: -100%;
+  top: -200%;
   width: 100%;
   height: 100%;
   z-index: 99;
 
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  // background: linear-gradient(209deg, #4287b3 -17.38%, #133f6b 78.4%), #276195;
-  background: rgb(130, 156, 168);
+  background-color: var(--dark);
   transition: all 0.2s ease-in;
 }
 
@@ -27,11 +26,20 @@
 .mobile-nav__list {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   row-gap: 20px;
-  font-size: 28px;
+  font-size: 22px;
 
-  & .active {
+  .active {
     opacity: 0.5;
   }
+
+  a:hover {
+    color: var(--accent);
+    }
+}
+
+.mobile-nav__logo {
+  margin-bottom: 100px;
 }

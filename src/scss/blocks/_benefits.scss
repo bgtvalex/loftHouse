@@ -1,3 +1,7 @@
+.benefits {
+  overflow: hidden;
+}
+
 .benefits__row {
   position: relative;
   display: flex;
@@ -5,14 +9,12 @@
   align-items: center;
   gap: 70px;
 
-  // border: 1px solid red;
-
   padding: 120px 0;
 
   &:after {
     content: 'II';
-    right: 0;
-    transform: translate(50%, -45%);
+    right: -50%;
+    transform: translate(-50%, -45%);
 		@include decorNumber;
   }
 }
@@ -36,5 +38,39 @@
     font-style: normal;
     font-weight: 300;
     line-height: 135%;
+  }
+}
+
+
+
+
+@media (max-width: 1023px) {
+
+  .benefits__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 30px;
+  }
+
+  .benefits__item {
+    gap: 20px;
+    justify-self: center;
+
+    img {
+      width: 60px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  
+  .benefits__row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 40px 30px;
   }
 }

@@ -5,13 +5,13 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.7px;
+  padding: 72px 0 51px;
 }
 
 .footer__row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  padding: 72px 0 51px;
 }
 
 .footer__logo {
@@ -29,4 +29,16 @@
   justify-content: flex-start;
   align-items: center;
   gap: 22.12px;
+}
+
+@media (max-width: 1023px) {
+  .footer {
+    padding: 36px 0 25.5px;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer__row {
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  }
 }

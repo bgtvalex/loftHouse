@@ -4,23 +4,61 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./../fonts/PlayfairDisplay/stylesheet.css">
-    <link rel="stylesheet" href="./../fonts/Raleway/stylesheet.css">
-    <link rel="stylesheet" href="./../fonts/Roboto/stylesheet.css">
+    <link rel="stylesheet" href="./fonts/PlayfairDisplay/stylesheet.css">
+    <link rel="stylesheet" href="./fonts/Raleway/stylesheet.css">
+    <link rel="stylesheet" href="./fonts/Roboto/stylesheet.css">
     <link rel="stylesheet" href="./css/main.css" />
+
+    <script src="https://api-maps.yandex.ru/v3/?apikey=fe0eaa38-0032-445b-a8cc-9da2ad118cd4&lang=ru_RU"></script>
+    <script src="./../libs/map/apiYandexMap.js"></script>
     <title>LoftHouse</title>
   </head>
   <body>
     @@include('blocks/header.html')
     <main>
-      <!-- @@include('blocks/benefits.html') -->
-      <!-- @@include('blocks/apartments.html') -->
-      <!-- @@include('blocks/cta.html') -->
-      <!-- @@include('blocks/video.html') -->
-      <!-- @@include('blocks/section-map.html') -->
-      <!-- @@include('blocks/feedback.html') -->
+      @@include('blocks/benefits.html')
+      @@include('blocks/apartments.html')
+      @@include('blocks/cta.html')
+      @@include('blocks/video.html')
+      @@include('blocks/section-map.html')
+      @@include('blocks/feedback.html')
     </main>
-    <!-- @@include('blocks/footer.html') -->
+    @@include('blocks/footer.html')
+    @@include('blocks/youtube.html')
+
+    <script>
+      window.map = null;
+
+      main();
+      async function main() {
+        await ymaps3.ready;
+        const {YMap, YMapDefaultSchemeLayer, YMapMarker, YMapControls, YMapDefaultFeaturesLayer} = ymaps3;
+
+        const {YMapZoomControl} = await ymaps3.import('@yandex/ymaps3-controls@0.0.1');
+        const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
+
+        map = new YMap(document.getElementById('map'), {location: LOCATION});
+
+        map.addChild((scheme = new YMapDefaultSchemeLayer()));
+        map.addChild(new YMapControls({position: 'right'}).addChild(new YMapZoomControl({})));
+        map.addChild(new YMapDefaultFeaturesLayer({id: 'features'}));
+
+        POINTS.forEach((point) => {
+          if (point.element) {
+            map.addChild(new YMapMarker(point, point.element(point)));
+          } else {
+            map.addChild(new YMapDefaultMarker(point));
+          }
+        });
+      }
+    </script>
+   
+
+
+    
+    <script src="./libs/phoneMask/mask.js"></script>
+    <script src="./libs/phoneMask/mask_list.js"></script>
+    <script src="./libs/youtubeLightbox/youtubeLightbox.js"></script>
     <script src="./js/index.bundle.js"></script>
   </body>
 </html>

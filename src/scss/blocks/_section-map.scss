@@ -1,19 +1,17 @@
 .section-map {
-	padding: 180px 0;
+  padding: 180px 0;
 }
 
 .section-map__row {
-	position: relative;
-
-	
+  position: relative;
 
   &:before {
     content: 'V';
-    
+
     left: 0;
     transform: translate(-50%, -60%);
-		z-index: -1;
-		@include decorNumber;
+    z-index: -1;
+    @include decorNumber;
   }
 }
 
@@ -26,7 +24,17 @@
 }
 
 .map {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
   background-color: var(--gray);
+}
+
+@media (max-width: 1023px) {
+  .section-map {
+    padding: 90px 0;
+  }
+
+  .section-map__title {
+    margin-bottom: 44px;
+  }
 }

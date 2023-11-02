@@ -11,3 +11,35 @@
 	grid-template-columns: repeat(4, 1fr);
 	gap: 30px;
 }
+
+
+@media (max-width: 1023px) {
+	.feedback {
+		margin-bottom: 90px;
+	}
+
+	.feedback__title {
+		margin-bottom: 19px;
+	}
+	
+	.feedback__form {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 30px;
+	}
+
+	.form__notice {
+		grid-row: 2/3;
+		grid-column: 1/2;
+	}
+}
+
+@media (max-width: 767px) {
+	.feedback__form {
+		grid-template-columns: 1fr;
+	}
+
+  .form__notice {
+    justify-content: center;
+    grid-row: 4 / 5;
+  }
+}

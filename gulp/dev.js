@@ -14,6 +14,7 @@ const babel = require('gulp-babel')
 const imagemin = require('gulp-imagemin')
 const changed = require('gulp-changed')
 
+
 const fileIncludeSettings = {
   prefix: '@@',
   basepath: '@file',
@@ -56,7 +57,7 @@ gulp.task('js:dev', function () {
       .src('./src/js/*.js')
       .pipe(changed('./build/js'))
       .pipe(plumber(plumberNotify('JS')))
-      // .pipe(babel())
+      .pipe(babel())
       .pipe(webpack(require('./../webpack.config.js')))
       .pipe(gulp.dest('./build/js'))
   )
@@ -86,6 +87,13 @@ gulp.task('files:dev', function () {
     .pipe(gulp.dest('./build/files'))
 })
 
+gulp.task('libs:dev', function () {
+  return gulp
+    .src('./src/libs/**/*')
+    // .pipe(changed('./build/libs'))
+    .pipe(gulp.dest('./build/libs'))
+})
+
 const serverOptions = {
   livereload: true,
   open: true,
@@ -108,5 +116,6 @@ gulp.task('watch:dev', function () {
   gulp.watch('./src/img/**/*', gulp.parallel('images:dev'))
   gulp.watch('./src/fonts/**/*', gulp.parallel('fonts:dev'))
   gulp.watch('./src/files/**/*', gulp.parallel('files:dev'))
+  gulp.watch('./src/libs/**/*', gulp.parallel('libs:dev'))
   gulp.watch('./src/js/**/*.js', gulp.parallel('js:dev'))
 })

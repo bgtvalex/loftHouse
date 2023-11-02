@@ -1,3 +1,7 @@
+.video {
+  overflow: hidden;
+}
+
 .video__row {
   position: relative;
   display: flex;
@@ -6,8 +10,9 @@
 
   &:after {
     content: 'IV';
-    right: 0;
+    right: 0%;
     transform: translate(50%, -55%);
+    z-index: -1;
 		@include decorNumber;
   }
 }
@@ -45,4 +50,11 @@
 		translate(-50%, -50%) 
 		scale(1.2);
 	filter: saturate(1.5);
+}
+
+
+@media (max-width: 767px) {
+  .video__icon {
+    width: 75px;
+  }
 }

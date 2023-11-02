@@ -70,10 +70,27 @@ a {
   }
 }
 
-.form__btn {
-  max-width: 255px;
-  height: 50px;
+.btn {
+  pointer-events: none;
   background-color: var(--accent);
+
+  &--active {
+    pointer-events: auto;
+    background-color: saturate(#D4C17F, 20%)
+  }
+
+  &--active:hover {
+    background-color: saturate(#D4C17F, 10%)
+  }
+
+  &--active:active {
+    top: 1px;
+  }
+
+}
+
+.form__btn {
+  height: 50px;
   position: relative;
 
   font-size: 16px;
@@ -82,13 +99,7 @@ a {
   line-height: 27px; /* 168.75% */
   transition: opacity .2 ease-in;
 
-  &:hover {
-    background-color: saturate(#D4C17F, 20%)
-  }
-
-  &:active {
-    top: 1px;
-  }
+  
 }
 
 .form__notice {
@@ -102,13 +113,118 @@ a {
   line-height: 123.077%;
 }
 
-
-
-
-
 @media (max-width: 1023px) {
   .title-1 {
     font-size: 32px;
     padding-bottom: 80px;
   }
+  
+  .title-2 {
+    font-size: 28px;
+    padding-bottom: 44px;
+  }
+}
+
+@media (max-width: 767px) {
+  .form__notice {
+    justify-content: center;
+    grid-row: 4 / 5;
+  }
+}
+
+
+
+// map
+
+
+
+.red {
+  background-color: red;
+  width: 20px;
+  height: 20px;
+}
+
+
+.pie-marker {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.pie-marker-title {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+
+  padding: 2px 4px;
+
+  background-color: #fff;
+
+  transform: translateX(-50%);
+}
+
+:root {
+  --radius: 20px;
+  --icon: #fff;
+}
+
+.circle {
+  position: relative;
+
+  width: var(--radius, 20px);
+  height: var(--radius, 20px);
+
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.circle::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: inline-block;
+
+  width: 50%;
+  height: 50%;
+
+  content: '';
+
+  border-radius: 50%;
+  background: no-repeat center center #fff;
+  background-image: var(--icon);
+
+  transform: translate3d(-50%, -50%, 0);
+}
+
+:root {
+  --size: 50px;
+}
+
+.icon {
+  position: relative;
+
+  width: var(--size, 20px);
+  height: var(--size, 20px);
+
+  background: no-repeat center center;
+  background-size: contain;
+}
+
+.icon-title {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+
+  padding: 2px 4px;
+
+  background-color: #fff;
+
+  transform: translateX(-50%);
 }
