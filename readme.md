@@ -1,5 +1,7 @@
 ## project: LoftHouse
 
+* [demo](https://bgtvalex.github.io/loftHouse/)
+
 ### Technologies:
 *  HTML, CSS, SASS, JS, Gulp, Webpack.
 
